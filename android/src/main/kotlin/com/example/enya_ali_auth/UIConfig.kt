@@ -1,0 +1,269 @@
+package com.example.enya_ali_auth
+
+data class UIConfig(
+    val apiKey: String = "",
+    val isDebug: Boolean = false,
+    
+    val backgroundColor: String = "",
+    val autoHideLoginLoading: Boolean = false,
+    val changeBtnIsHidden: Boolean = false,
+    val navIsHidden: Boolean = false,
+
+    val logoIsHidden: Boolean = false,
+    val logoImage: String = "",
+    val logoWidth: Float = 0f,
+    val logoHeight: Float = 0f,
+    val logoOffsetY: Float = 0f,
+
+    val numberColor: String = "",
+    val numberFontSize: Int = 0,
+    val numberOffsetY: Float = 0f,
+
+    val sloganIsHidden: Boolean = false,
+    val sloganText: String = "",
+    val sloganWidth: Float = 0f,
+    val sloganOffsetY: Float = 0f,
+    val sloganColor: String = "",
+    val sloganFontSize: Int = 0,
+
+    val loginBtnBgColor: String = "",
+    val loginBtnText: String = "",
+    val loginBtnOffsetY: Float = 0f,
+    val loginBtnColor: String = "",
+    val loginBtnFontSize: Float = 0f,
+    val loginBtnHeight: Float = 0f,
+    val loginBtnMarginHorizontal: Float = 0f,
+
+    val otherLoginImages: List<String> = listOf(),
+    val otherLoginWH: Float = 0f,
+    val otherLoginSpace: Float = 0f,
+    val otherLoginOffsetY: Float = 0f,
+
+    val checkBoxImages: List<String> = listOf(),
+    val checkBoxWH: Float = 0f,
+    val checkBoxImageEdgeInsets: List<Float> = listOf(),
+    val privacyColors: List<String> = listOf(),
+    val privacyFontSize: Float = 0f,
+    val privacyPreText: String = "",
+    val privacySufText: String = "",
+    val privacyOperatorPreText: String = "",
+    val privacyOperatorSufText: String = "",
+    val privacyOperatorMarginHorizontal: Float = 0f,
+    val privacyOffsetY: Float = 0f,
+    val privacyOne: List<String> = listOf(),
+    val privacyTwo: List<String> = listOf(),
+
+    val privacyNavBackImage: String = "",
+    val privacyNavColor: String = "",
+    val privacyNavTitleColor: String = "",
+
+
+    //二次协议弹窗
+    val privacyAlertIsNeedShow: Boolean = false,
+    val privacyAlertBackgroundColor: String = "",
+    val privacyAlertCornerRadiusArray: List<Float> = listOf(),
+    val privacyAlertTitleContent: String = "",
+    val privacyAlertTitleFontSize: Float = 0f,
+    val privacyAlertTitleColor: String = "",
+    val privacyAlertTitleBackgroundColor: String = "",
+    val privacyAlertTitleOffsetY: Float = 0f,
+    val privacyAlertContentOffsetY: Float = 0f, 
+
+
+    val privacyAlertContentFontSize: Float = 0f,
+    val privacyAlertContentColors: List<String> = listOf(),
+    val privacyAlertContentBackgroundColor: String = "",
+    val privacyAlertContentMarginHorizontal: Float = 0f,
+    val privacyAlertContentMarginVertical: Float = 0f,
+
+    val privacyAlertButtonTextColors: List<String> = listOf(),
+    val privacyAlertButtonFontSize: Float = 0f,
+    val privacyAlertButtonCornerRadius: Float = 0f,
+    val privacyAlertBtnBackgroundColor: String = "",
+    val privacyAlertBtnContent: String = "",
+    val privacyAlertButtonWidth: Float = 0f,
+    val privacyAlertButtonHeight: Float = 0f,
+    val privacyAlertButtonOffsetY: Float = 0f,
+    val privacyAlertCloseButtonIsNeedShow: Boolean = false,
+    val privacyAlertWidth: Float = 0f,
+    val privacyAlertHeight: Float = 0f,
+) {
+    companion object {
+        @JvmStatic
+        fun fromMap(map: HashMap<*, *>): UIConfig {
+            return UIConfig(
+                apiKey = map["apiKey"] as? String ?: "",
+                isDebug = map["isDebug"] as? Boolean ?: false,
+                
+                backgroundColor = map["backgroundColor"] as? String ?: "",
+                autoHideLoginLoading = map["autoHideLoginLoading"] as? Boolean ?: false,
+                changeBtnIsHidden = map["changeBtnIsHidden"] as? Boolean ?: false,
+                navIsHidden = map["navIsHidden"] as? Boolean ?: false,
+
+                logoIsHidden = map["logoIsHidden"] as? Boolean ?: false,
+                logoImage = map["logoImage"] as? String ?: "",
+                logoWidth = (map["logoWidth"] as? Number)?.toFloat() ?: 0f,
+                logoHeight = (map["logoHeight"] as? Number)?.toFloat() ?: 0f,
+                logoOffsetY = (map["logoOffsetY"] as? Number)?.toFloat() ?: 0f,
+
+                numberColor = map["numberColor"] as? String ?: "",
+                numberFontSize = map["numberFontSize"] as? Int?:0,
+                numberOffsetY = (map["numberOffsetY"] as? Number)?.toFloat() ?: 0f,
+
+                sloganIsHidden = map["sloganIsHidden"] as? Boolean ?: false,
+                sloganText = map["sloganText"] as? String ?: "",
+                sloganOffsetY = (map["sloganOffsetY"] as? Number)?.toFloat() ?: 0f,
+                sloganWidth = (map["sloganWidth"] as? Number)?.toFloat() ?: 0f,
+                sloganColor = map["sloganColor"] as? String ?: "",
+                sloganFontSize = map["sloganFontSize"] as? Int ?: 0,
+
+                loginBtnText = map["loginBtnText"] as? String ?: "",
+                loginBtnColor = map["loginBtnColor"] as? String ?: "",
+                loginBtnFontSize = (map["loginBtnFontSize"] as? Number)?.toFloat() ?: 0f,
+                loginBtnOffsetY = (map["loginBtnOffsetY"] as? Number)?.toFloat() ?: 0f,
+                loginBtnBgColor = map["loginBtnBgColor"] as? String ?: "",
+                loginBtnHeight = (map["loginBtnHeight"] as? Number)?.toFloat() ?: 0f,
+                loginBtnMarginHorizontal = (map["loginBtnMarginHorizontal"] as? Number)?.toFloat() ?: 0f,
+
+                otherLoginImages = (map["otherLoginImages"] as? List<*>)?.filterIsInstance<String>() ?: listOf(),
+                otherLoginWH = (map["otherLoginWH"] as? Number)?.toFloat() ?: 0f,
+                otherLoginSpace = (map["otherLoginSpace"] as? Number)?.toFloat() ?: 0f,
+                otherLoginOffsetY = (map["otherLoginOffsetY"] as? Number)?.toFloat() ?: 0f,
+
+                checkBoxImages = (map["checkBoxImages"] as? List<*>)?.filterIsInstance<String>() ?: listOf(),
+                privacyOne = (map["privacyOne"] as? List<*>)?.filterIsInstance<String>() ?: listOf(),
+                privacyTwo = (map["privacyTwo"] as? List<*>)?.filterIsInstance<String>() ?: listOf(),
+                checkBoxWH = (map["checkBoxWH"] as? Number)?.toFloat() ?: 0f,
+                checkBoxImageEdgeInsets = (map["checkBoxImageEdgeInsets"] as? List<*>)?.map { (it as? Number)?.toFloat() ?: 0f } ?: listOf(),
+                privacyColors = (map["privacyColors"] as? List<*>)?.filterIsInstance<String>() ?: listOf(),
+                privacyFontSize = (map["privacyFontSize"] as? Number)?.toFloat() ?: 0f,
+                privacyPreText = map["privacyPreText"] as? String ?: "",
+                privacySufText = map["privacySufText"] as? String ?: "",
+                privacyOperatorPreText = map["privacyOperatorPreText"] as? String ?: "",
+                privacyOperatorSufText = map["privacyOperatorSufText"] as? String ?: "",
+                privacyOperatorMarginHorizontal = (map["privacyOperatorMarginHorizontal"] as? Number)?.toFloat() ?: 0f,
+                privacyOffsetY = (map["privacyOffsetY"] as? Number)?.toFloat() ?: 0f,
+
+                privacyNavBackImage = map["privacyNavBackImage"] as? String ?: "",
+                privacyNavColor = map["privacyNavColor"] as? String ?: "",
+                privacyNavTitleColor = map["privacyNavTitleColor"] as? String ?: "",
+
+                privacyAlertIsNeedShow = map["privacyAlertIsNeedShow"] as? Boolean ?: false,
+                privacyAlertBackgroundColor = map["privacyAlertBackgroundColor"] as? String ?: "",
+                privacyAlertCornerRadiusArray = (map["privacyAlertCornerRadiusArray"] as? List<*>)?.map { (it as? Number)?.toFloat() ?: 0f } ?: listOf(),
+                privacyAlertTitleFontSize = (map["privacyAlertTitleFontSize"] as? Number)?.toFloat() ?: 0f,
+                privacyAlertTitleContent = map["privacyAlertTitleContent"] as? String ?: "",
+                privacyAlertTitleColor = map["privacyAlertTitleColor"] as? String ?: "",
+                privacyAlertTitleBackgroundColor = map["privacyAlertTitleBackgroundColor"] as? String ?: "",
+                privacyAlertTitleOffsetY = (map["privacyAlertTitleOffsetY"] as? Number)?.toFloat() ?: 0f,
+
+                privacyAlertContentFontSize = (map["privacyAlertContentFontSize"] as? Number)?.toFloat() ?: 0f,
+                privacyAlertContentColors = (map["privacyAlertContentColors"] as? List<*>)?.filterIsInstance<String>() ?: listOf(),
+                privacyAlertContentBackgroundColor = map["privacyAlertContentBackgroundColor"] as? String ?: "",
+                privacyAlertContentMarginHorizontal = (map["privacyAlertContentMarginHorizontal"] as? Number)?.toFloat() ?: 0f,
+                privacyAlertContentMarginVertical = (map["privacyAlertContentMarginVertical"] as? Number)?.toFloat() ?: 0f,
+                privacyAlertContentOffsetY = (map["privacyAlertContentOffsetY"] as? Number)?.toFloat() ?: 0f,
+
+                privacyAlertButtonTextColors = (map["privacyAlertButtonTextColors"] as? List<*>)?.filterIsInstance<String>() ?: listOf(),
+                privacyAlertButtonFontSize = (map["privacyAlertButtonFontSize"] as? Number)?.toFloat() ?: 0f,
+                privacyAlertBtnBackgroundColor = map["privacyAlertBtnBackgroundColor"] as? String ?: "",
+                privacyAlertBtnContent = map["privacyAlertBtnContent"] as? String ?: "",
+                privacyAlertButtonWidth = (map["privacyAlertButtonWidth"] as? Number)?.toFloat() ?: 0f,
+                privacyAlertButtonCornerRadius = (map["privacyAlertButtonCornerRadius"] as? Number)?.toFloat() ?: 0f,
+                privacyAlertButtonHeight = (map["privacyAlertButtonHeight"] as? Number)?.toFloat() ?: 0f,
+                privacyAlertButtonOffsetY = (map["privacyAlertButtonOffsetY"] as? Number)?.toFloat() ?: 0f,
+                privacyAlertCloseButtonIsNeedShow = map["privacyAlertCloseButtonIsNeedShow"] as? Boolean ?: false,
+                privacyAlertWidth = (map["privacyAlertWidth"] as? Number)?.toFloat() ?: 0f,
+                privacyAlertHeight = (map["privacyAlertHeight"] as? Number)?.toFloat() ?: 0f
+            )
+        }
+    }
+
+    fun toMap(): Map<String, Any> {
+        return mapOf(
+            "apiKey" to apiKey,
+            "isDebug" to isDebug,
+            "backgroundColor" to backgroundColor,
+            "autoHideLoginLoading" to autoHideLoginLoading,
+            "changeBtnIsHidden" to changeBtnIsHidden,
+            "navIsHidden" to navIsHidden,
+
+            "logoIsHidden" to logoIsHidden,
+            "logoImage" to logoImage,   
+            "logoWidth" to logoWidth,
+            "logoHeight" to logoHeight,
+            "logoOffsetY" to logoOffsetY,
+
+            "numberColor" to numberColor,
+            "numberFontSize" to numberFontSize,
+            "numberOffsetY" to numberOffsetY,
+
+            "sloganIsHidden" to sloganIsHidden,
+            "sloganText" to sloganText,
+            "sloganOffsetY" to sloganOffsetY,
+            "sloganWidth" to sloganWidth,
+            "sloganColor" to sloganColor,
+            "sloganFontSize" to sloganFontSize,
+
+
+            "loginBtnText" to loginBtnText,
+            "loginBtnOffsetY" to loginBtnOffsetY,
+            "loginBtnColor" to loginBtnColor,
+            "loginBtnFontSize" to loginBtnFontSize,
+            "loginBtnHeight" to loginBtnHeight,
+            "loginBtnMarginHorizontal" to loginBtnMarginHorizontal,
+            "loginBtnBgColor" to loginBtnBgColor,
+
+            "otherLoginImages" to otherLoginImages,
+            "otherLoginWH" to otherLoginWH,
+            "otherLoginSpace" to otherLoginSpace,
+            "otherLoginOffsetY" to otherLoginOffsetY,
+
+            "checkBoxImages" to checkBoxImages,
+            "checkBoxWH" to checkBoxWH,
+            "checkBoxImageEdgeInsets" to checkBoxImageEdgeInsets,
+            "privacyColors" to privacyColors,
+            "privacyFontSize" to privacyFontSize,
+            "privacyPreText" to privacyPreText,
+            "privacySufText" to privacySufText,
+            "privacyOperatorPreText" to privacyOperatorPreText,
+            "privacyOperatorSufText" to privacyOperatorSufText,
+            "privacyOperatorMarginHorizontal" to privacyOperatorMarginHorizontal,
+            "privacyOffsetY" to privacyOffsetY,
+            "privacyOne" to privacyOne,
+            "privacyTwo" to privacyTwo,
+            "privacyNavBackImage" to privacyNavBackImage,
+            "privacyNavColor" to privacyNavColor,
+            "privacyNavTitleColor" to privacyNavTitleColor,
+
+            //二次协议弹窗
+            "privacyAlertIsNeedShow" to privacyAlertIsNeedShow,
+            "privacyAlertBackgroundColor" to privacyAlertBackgroundColor,
+            "privacyAlertCornerRadiusArray" to privacyAlertCornerRadiusArray,
+            "privacyAlertTitleFontSize" to privacyAlertTitleFontSize,
+            "privacyAlertTitleContent" to privacyAlertTitleContent,
+            "privacyAlertTitleColor" to privacyAlertTitleColor,
+            "privacyAlertTitleBackgroundColor" to privacyAlertTitleBackgroundColor,
+            "privacyAlertTitleOffsetY" to privacyAlertTitleOffsetY,
+            "privacyAlertContentOffsetY" to privacyAlertContentOffsetY,
+
+            "privacyAlertContentFontSize" to privacyAlertContentFontSize,
+            "privacyAlertContentColors" to privacyAlertContentColors,
+            "privacyAlertContentBackgroundColor" to privacyAlertContentBackgroundColor,
+            "privacyAlertContentMarginHorizontal" to privacyAlertContentMarginHorizontal,
+            "privacyAlertContentMarginVertical" to privacyAlertContentMarginVertical,
+            
+            "privacyAlertButtonTextColors" to privacyAlertButtonTextColors,
+            "privacyAlertButtonFontSize" to privacyAlertButtonFontSize,
+            "privacyAlertButtonCornerRadius" to privacyAlertButtonCornerRadius,
+            "privacyAlertBtnBackgroundColor" to privacyAlertBtnBackgroundColor,
+            "privacyAlertBtnContent" to privacyAlertBtnContent,
+            "privacyAlertButtonWidth" to privacyAlertButtonWidth,
+            "privacyAlertButtonHeight" to privacyAlertButtonHeight,
+            "privacyAlertButtonOffsetY" to privacyAlertButtonOffsetY,
+            "privacyAlertCloseButtonIsNeedShow" to privacyAlertCloseButtonIsNeedShow,
+            "privacyAlertWidth" to privacyAlertWidth,
+            "privacyAlertHeight" to privacyAlertHeight,
+        )
+    }
+}

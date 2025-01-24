@@ -1,0 +1,58 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "enya_ali_auth",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "enya_ali_auth (profile mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "enya_ali_auth (release mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "example",
+            "cwd": "example",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "example (profile mode)",
+            "cwd": "example",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "example (release mode)",
+            "cwd": "example",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "example (Flutter KB2000)",
+            "program": "lib/main.dart",
+            "cwd": "example",
+            "deviceId": "adb-cfb1aaed-SQ8ht6._adb-tls-connect._tcp",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "example (Flutter 123456)",
+            "program": "lib/main.dart",
+            "cwd": "example",
+            "deviceId": "ARMR023606000048",
+            "request": "launch",
+            "type": "dart"
+        }
+    ]
+}

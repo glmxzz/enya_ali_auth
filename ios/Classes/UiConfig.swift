@@ -3,6 +3,7 @@ import Foundation
 @objc public class UiConfig: NSObject {
     @objc public var apiKey: String
     @objc public var isDebug: Bool
+    @objc public var isWxInstalled: Bool
     @objc public var backgroundColor: String
     @objc public var autoHideLoginLoading: Bool
     @objc public var changeBtnIsHidden: Bool
@@ -89,6 +90,7 @@ import Foundation
     @objc public override init() {
         self.apiKey = ""
         self.isDebug = false
+        self.isWxInstalled = false
         self.backgroundColor = ""
         self.autoHideLoginLoading = false
         self.changeBtnIsHidden = false
@@ -176,6 +178,7 @@ import Foundation
     @objc public init(dictionary: [String: Any]) {
         self.apiKey = dictionary["apiKey"] as? String ?? ""
         self.isDebug = dictionary["isDebug"] as? Bool ?? false
+        self.isWxInstalled = dictionary["isWxInstalled"] as? Bool ?? false
         self.backgroundColor = dictionary["backgroundColor"] as? String ?? ""
         self.autoHideLoginLoading = dictionary["autoHideLoginLoading"] as? Bool ?? false
         self.changeBtnIsHidden = dictionary["changeBtnIsHidden"] as? Bool ?? false
@@ -256,6 +259,7 @@ import Foundation
         return [
             "apiKey": apiKey,
             "isDebug": isDebug,
+            "isWxInstalled": isWxInstalled,
             "backgroundColor":backgroundColor,
             "autoHideLoginLoading": autoHideLoginLoading,
             "changeBtnIsHidden": changeBtnIsHidden,

@@ -3,6 +3,7 @@ package com.example.enya_ali_auth
 data class UIConfig(
     val apiKey: String = "",
     val isDebug: Boolean = false,
+    val isWxInstalled: Boolean = false,
     
     val backgroundColor: String = "",
     val autoHideLoginLoading: Boolean = false,
@@ -94,7 +95,7 @@ data class UIConfig(
             return UIConfig(
                 apiKey = map["apiKey"] as? String ?: "",
                 isDebug = map["isDebug"] as? Boolean ?: false,
-                
+                isWxInstalled = map["isWxInstalled"] as? Boolean ?: false,
                 backgroundColor = map["backgroundColor"] as? String ?: "",
                 autoHideLoginLoading = map["autoHideLoginLoading"] as? Boolean ?: false,
                 changeBtnIsHidden = map["changeBtnIsHidden"] as? Boolean ?: false,
@@ -183,6 +184,7 @@ data class UIConfig(
         return mapOf(
             "apiKey" to apiKey,
             "isDebug" to isDebug,
+            "isWxInstalled" to isWxInstalled,
             "backgroundColor" to backgroundColor,
             "autoHideLoginLoading" to autoHideLoginLoading,
             "changeBtnIsHidden" to changeBtnIsHidden,

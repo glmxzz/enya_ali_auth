@@ -64,11 +64,11 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    final ONE_KEY_LOGIN_IOS ="";
+    final ONE_KEY_LOGIN_IOS = "";
     _enyaAliAuthPlugin.init(UIConfig(
       apiKey: ONE_KEY_LOGIN_IOS,
       isDebug: true,
-
+      isWxInstalled: false,
       backgroundColor: "#161518",
       autoHideLoginLoading: false,
       changeBtnIsHidden: true,

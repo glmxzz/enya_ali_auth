@@ -1,6 +1,7 @@
 class UIConfig {
   final String apiKey;
   final bool isDebug;
+  final bool isWxInstalled;
   final String backgroundColor;
   final bool autoHideLoginLoading;
   final bool changeBtnIsHidden;
@@ -95,6 +96,7 @@ class UIConfig {
   UIConfig({
     this.apiKey = "",
     this.isDebug = false,
+    this.isWxInstalled = false,
     this.backgroundColor = "",
     this.autoHideLoginLoading = false,
     this.changeBtnIsHidden = true,
@@ -187,6 +189,7 @@ class UIConfig {
     return {
       "apiKey": apiKey,
       "isDebug": isDebug,
+      "isWxInstalled": isWxInstalled,
       "backgroundColor": backgroundColor,
       "autoHideLoginLoading": autoHideLoginLoading,
       "changeBtnIsHidden": changeBtnIsHidden,

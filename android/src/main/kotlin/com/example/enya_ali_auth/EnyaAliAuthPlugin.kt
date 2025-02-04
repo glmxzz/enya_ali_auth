@@ -39,7 +39,7 @@ class EnyaAliAuthPlugin : FlutterPlugin, MethodCallHandler, ActivityAware,
                 oneKeyLoginManager.apply {
                     setIOneKeyLoginCallBack(this@EnyaAliAuthPlugin)
                     initSdk(uiConfig)
-                    initLayout()
+                    initLayout(uiConfig)
                     setAuthUIConfig()
                 }
 

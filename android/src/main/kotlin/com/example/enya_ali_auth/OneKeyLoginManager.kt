@@ -97,7 +97,7 @@ class OneKeyLoginManager(private val context: Context) {
     fun setAuthUIConfig() {
         uiConfig?.let { config ->
             Log.i("uiConfig == ", config.toMap().toString())
-            val temp = getCurrentCarrierNameCn(mPhoneNumberAuthHelper?.currentCarrierName?:"")
+            val temp = getCurrentCarrierNameCn(mPhoneNumberAuthHelper?.currentCarrierName ?: "")
             if (currentCarrierName != temp) {
                 currentCarrierName = temp
 
@@ -201,7 +201,7 @@ class OneKeyLoginManager(private val context: Context) {
         }
     }
 
-    fun initLayout() {
+    fun initLayout(uiConfig: UIConfig) {
         Log.i("OneKeyLoginManagerHost", "privacyDialogWidth = $privacyDialogWidth")
         mPhoneNumberAuthHelper?.let { helper ->
             helper.setUIClickListener { code: String, context: Context, jsonString: String? ->
@@ -226,14 +226,21 @@ class OneKeyLoginManager(private val context: Context) {
                 AuthRegisterXmlConfig.Builder()
                     .setLayout(R.layout.layout_onekey_login, object : AbstractPnsViewDelegate() {
                         override fun onViewCreated(view: View) {
-                            view.findViewById<View>(R.id.wxLogin)
-                                .setOnClickListener {
+
+                            view.findViewById<View>(R.id.wxLogin).let { wxView ->
+                                wxView.visibility =
+                                    if (uiConfig.isWxInstalled) View.VISIBLE else View.GONE
+
+
+                                wxView.setOnClickListener {
                                     if (helper.queryCheckBoxIsChecked()) {
                                         iOneKeyLoginCallBack?.onThirdLogin(0)
                                     } else {
                                         showPrivacyAlert(0)
                                     }
                                 }
+                            }
+
                             view.findViewById<View>(R.id.loginPhone).setOnClickListener {
                                 if (helper.queryCheckBoxIsChecked()) {
                                     iOneKeyLoginCallBack?.onThirdLogin(1)

@@ -190,8 +190,12 @@ func initLayout() -> TXCustomModel? {
     phoneLoginBtn.setImage(UIImage(named: phoneKey, in: Bundle.main, compatibleWith: nil), for: .normal)
     phoneLoginBtn.addTarget(self, action: #selector(phoneClicked), for: .touchUpInside)
 
+    
     txCustomModel.customViewBlock = {(superView) in
-        superView.addSubview(wxLoginBtn)
+        if (config.isWxInstalled){
+            superView.addSubview(wxLoginBtn)
+        }
+        
         superView.addSubview(phoneLoginBtn)
     }
 
@@ -200,19 +204,33 @@ func initLayout() -> TXCustomModel? {
                                             sloganFrame,numberFrame,loginFrame,changeBtnFrame,privacyFrame) in
 
         let itemWidth = config.otherLoginWH
-        let itemSpace = config.otherLoginSpace
-        let frameTotalWidth = itemWidth*2 + itemSpace
+        var itemSpace = config.otherLoginSpace
+        var frameTotalWidth = itemWidth*2 + itemSpace
+        
+        if (!config.isWxInstalled) {
+            itemSpace = 0
+            frameTotalWidth = itemWidth
+        }
+        
+        
         
         //居中
         let x = Int((loginFrame.size.width - CGFloat(frameTotalWidth))/2 + loginFrame.minX)
         let y = Int(loginFrame.minY) + Int(config.otherLoginOffsetY)
         
-        wxLoginBtn.frame = CGRect.init(x: CGFloat(x), y:CGFloat(y), width: itemWidth, height: itemWidth)
-        wxLoginBtn.layer.cornerRadius = wxLoginBtn.frame.size.width / 2
-        wxLoginBtn.layer.masksToBounds = true
         
+        if (config.isWxInstalled) {
+            wxLoginBtn.frame = CGRect.init(x: CGFloat(x), y:CGFloat(y), width: itemWidth, height: itemWidth)
+            wxLoginBtn.layer.cornerRadius = wxLoginBtn.frame.size.width / 2
+            wxLoginBtn.layer.masksToBounds = true
+        }
         
-        phoneLoginBtn.frame = CGRect.init(x: CGFloat(x) + itemWidth + itemSpace, y: CGFloat(y), width: itemWidth, height: itemWidth)
+        var phoneLoginBtnX = CGFloat(x) + itemWidth + itemSpace
+        if (!config.isWxInstalled) {
+            phoneLoginBtnX = CGFloat(x)
+        }
+        
+        phoneLoginBtn.frame = CGRect.init(x: phoneLoginBtnX, y: CGFloat(y), width: itemWidth, height: itemWidth)
         phoneLoginBtn.layer.cornerRadius = phoneLoginBtn.frame.size.width / 2
         phoneLoginBtn.layer.masksToBounds = true
 

@@ -117,7 +117,7 @@ func initLayout() -> TXCustomModel? {
         txCustomModel.autoHideLoginLoading = config.autoHideLoginLoading
         txCustomModel.changeBtnIsHidden = config.changeBtnIsHidden
         txCustomModel.navIsHidden = config.navIsHidden
-        txCustomModel.hideLoginLoading = config.hideLoginLoading
+        txCustomModel.autoHideLoginLoading = config.hideLoginLoading
     
         let logoKey = FlutterDartProject.lookupKey(forAsset: config.logoImage)
     

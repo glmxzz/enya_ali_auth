@@ -8,6 +8,7 @@ import Foundation
     @objc public var autoHideLoginLoading: Bool
     @objc public var changeBtnIsHidden: Bool
     @objc public var navIsHidden: Bool
+    @objc public var hideLoginLoading: Bool
 
     @objc public var logoIsHidden: Bool
     @objc public var logoImage: String
@@ -95,7 +96,7 @@ import Foundation
         self.autoHideLoginLoading = false
         self.changeBtnIsHidden = false
         self.navIsHidden = false
-
+        self.hideLoginLoading = true
         self.logoIsHidden = false
         self.logoImage = ""
         self.logoWidth = 0
@@ -183,6 +184,8 @@ import Foundation
         self.autoHideLoginLoading = dictionary["autoHideLoginLoading"] as? Bool ?? false
         self.changeBtnIsHidden = dictionary["changeBtnIsHidden"] as? Bool ?? false
         self.navIsHidden = dictionary["navIsHidden"] as? Bool ?? false
+        self.hideLoginLoading = dictionary["hideLoginLoading"] as? Bool ?? true
+
         self.logoIsHidden = dictionary["logoIsHidden"] as? Bool ?? false
         self.logoImage = dictionary["logoImage"] as? String ?? ""
         self.logoWidth = dictionary["logoWidth"] as? CGFloat ?? 0
@@ -264,6 +267,8 @@ import Foundation
             "autoHideLoginLoading": autoHideLoginLoading,
             "changeBtnIsHidden": changeBtnIsHidden,
             "navIsHidden": navIsHidden,
+            "hideLoginLoading": hideLoginLoading,
+            
             "logoIsHidden": logoIsHidden,
             "logoImage": logoImage,
             "logoWidth": logoWidth,

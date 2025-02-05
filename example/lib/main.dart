@@ -73,6 +73,7 @@ class _MyAppState extends State<MyApp> {
       autoHideLoginLoading: false,
       changeBtnIsHidden: true,
       navIsHidden: true,
+      hideLoginLoading: true,
 
       logoIsHidden: false,
       logoImage: "assets/images/ic_launcher.png",

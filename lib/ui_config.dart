@@ -6,6 +6,7 @@ class UIConfig {
   final bool autoHideLoginLoading;
   final bool changeBtnIsHidden;
   final bool navIsHidden;
+  final bool hideLoginLoading;
 
   //logo区域
   final bool logoIsHidden;
@@ -101,7 +102,7 @@ class UIConfig {
     this.autoHideLoginLoading = false,
     this.changeBtnIsHidden = true,
     this.navIsHidden = false,
-
+    this.hideLoginLoading = true,
     //logo区域
     this.logoIsHidden = false, //是否隐藏logo
     this.logoImage = "", //logo图片
@@ -194,6 +195,7 @@ class UIConfig {
       "autoHideLoginLoading": autoHideLoginLoading,
       "changeBtnIsHidden": changeBtnIsHidden,
       "navIsHidden": navIsHidden,
+      "hideLoginLoading": hideLoginLoading,
       "logoIsHidden": logoIsHidden,
       "logoImage": logoImage,
       "logoWidth": logoWidth,

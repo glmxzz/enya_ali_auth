@@ -9,6 +9,7 @@ data class UIConfig(
     val autoHideLoginLoading: Boolean = false,
     val changeBtnIsHidden: Boolean = false,
     val navIsHidden: Boolean = false,
+    val hideLoginLoading: Boolean = true,
 
     val logoIsHidden: Boolean = false,
     val logoImage: String = "",
@@ -100,6 +101,7 @@ data class UIConfig(
                 autoHideLoginLoading = map["autoHideLoginLoading"] as? Boolean ?: false,
                 changeBtnIsHidden = map["changeBtnIsHidden"] as? Boolean ?: false,
                 navIsHidden = map["navIsHidden"] as? Boolean ?: false,
+                hideLoginLoading = map["hideLoginLoading"] as? Boolean ?: true,
 
                 logoIsHidden = map["logoIsHidden"] as? Boolean ?: false,
                 logoImage = map["logoImage"] as? String ?: "",
@@ -189,6 +191,7 @@ data class UIConfig(
             "autoHideLoginLoading" to autoHideLoginLoading,
             "changeBtnIsHidden" to changeBtnIsHidden,
             "navIsHidden" to navIsHidden,
+            "hideLoginLoading" to hideLoginLoading,
 
             "logoIsHidden" to logoIsHidden,
             "logoImage" to logoImage,   

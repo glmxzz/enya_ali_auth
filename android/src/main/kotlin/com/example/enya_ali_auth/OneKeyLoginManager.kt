@@ -137,7 +137,7 @@ class OneKeyLoginManager(private val context: Context) {
                         .setLogBtnBackgroundDrawable(context.resources.getDrawable(R.drawable.background_login_onekey))
                         .setLogBtnHeight(config.loginBtnHeight.toInt())
                         .setLogBtnToastHidden(true)
-                        .setHiddenLoading(false)
+                        .setHiddenLoading(config.hideLoginLoading)
 
 
                         .setPrivacyTextSize(config.privacyFontSize.toInt())

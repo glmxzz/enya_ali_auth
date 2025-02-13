@@ -114,6 +114,7 @@ class OneKeyLoginManager(private val context: Context) {
                         .setNavHidden(config.navIsHidden)
                         .setStatusBarColor(Color.TRANSPARENT)
                         .setStatusBarUIFlag(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN)
+                        .setPageBackgroundDrawable(context.resources.getDrawable(R.drawable.background_onekey))
 
                         //logo
                         .setLogoHidden(config.logoIsHidden)

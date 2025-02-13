@@ -425,14 +425,8 @@ class OneKeyLoginManager(private val context: Context) {
         var imageName = path
         try {
             // 处理 Flutter 资源路径
-            when {
-                path.startsWith("assets/") || path.startsWith("/assets/") -> {
-                    // 移除 assets/ 前缀，并移除文件扩展名
-                    imageName = path.replace(Regex("^/?assets/"), "")
-                        .substringBeforeLast(".")
-                }
-                else -> imageName = path.substringBeforeLast(".")
-            }
+            imageName = path.substringBeforeLast(".").split("/").last()
+            
         } catch (e: Exception) {
             Log.e("OneKeyLoginManager", "Error processing image path: $path", e)
         }

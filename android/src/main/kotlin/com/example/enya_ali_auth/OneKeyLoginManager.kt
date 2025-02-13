@@ -98,7 +98,7 @@ class OneKeyLoginManager(private val context: Context) {
         uiConfig?.let { config ->
             Log.i("uiConfig == ", config.toMap().toString())
             val temp = getCurrentCarrierNameCn(mPhoneNumberAuthHelper?.currentCarrierName ?: "")
-            val loginImgPath = getImageName(config.loginBtnImage)
+            val loginImgPath = getImageName(config.logoImage)
             val checkedImgPath = getImageName(config.checkBoxImages[0])
             val uncheckedImgPath = getImageName(config.checkBoxImages[1])
             

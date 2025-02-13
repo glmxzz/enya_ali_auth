@@ -71,7 +71,7 @@ class OneKeyLoginManager(private val context: Context) {
                 setAuthSDKInfo(uiConfig.apiKey)
                 accelerateLoginPage(TIMEOUT, object : PreLoginResultListener {
                     override fun onTokenSuccess(p0: String) {
-                        oneKeyLogin()
+                        iOneKeyLoginCallBack?.onTokenResult("{\"code\":\"500000\"}")
                     }
 
                     override fun onTokenFailed(p0: String, p1: String) {

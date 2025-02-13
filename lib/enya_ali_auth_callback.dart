@@ -14,4 +14,6 @@ abstract class EnyaAliAuthCallback {
   void onUserExist();
 
   void onTokenFail();
+
+  void onPreTokenSuc() ;
 }

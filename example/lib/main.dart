@@ -54,6 +54,12 @@ class MyCallback implements EnyaAliAuthCallback {
   void onTokenFail() {
     // TODO: implement onTokenFail
   }
+
+  @override
+  void onPreTokenSuc() {
+
+    print('onPreTokenSuc ------------------');
+  }
 }
 
 class _MyAppState extends State<MyApp> {

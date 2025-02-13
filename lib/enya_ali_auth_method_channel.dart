@@ -42,6 +42,9 @@ class MethodChannelEnyaAliAuth extends EnyaAliAuthPlatform {
           Map<String, dynamic> resultMap = jsonDecode(call.arguments);
           final code = resultMap["code"] ?? (resultMap["resultCode"] ?? "");
           switch (code) {
+            case "500000":
+              callback.onPreTokenSuc();
+              break;
             case "500012": //预取号失败，自定义的， 不是阿里的code.
               callback.onTokenFail();
               break;

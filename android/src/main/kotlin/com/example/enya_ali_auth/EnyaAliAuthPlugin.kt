@@ -23,6 +23,7 @@ class EnyaAliAuthPlugin : FlutterPlugin, MethodCallHandler, ActivityAware,
     /// when the Flutter Engine is detached from the Activity
     private lateinit var channel: MethodChannel
     private lateinit var oneKeyLoginManager: OneKeyLoginManager
+    private var uiConfig: UIConfig? = null
 
     override fun onAttachedToEngine(flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
         channel = MethodChannel(flutterPluginBinding.binaryMessenger, "enya_ali_auth")
@@ -35,19 +36,25 @@ class EnyaAliAuthPlugin : FlutterPlugin, MethodCallHandler, ActivityAware,
             "init" -> {
                 val map = call.arguments as HashMap<*, *>
                 Log.i("uiConfig !! ", map.toString())
-                val uiConfig = UIConfig.fromMap(map)
-                oneKeyLoginManager.apply {
-                    setIOneKeyLoginCallBack(this@EnyaAliAuthPlugin)
-                    initSdk(uiConfig)
-                    initLayout(uiConfig)
-                    setAuthUIConfig()
+                uiConfig = UIConfig.fromMap(map)
+                uiConfig?.let {
+                    oneKeyLoginManager.apply {
+                        setIOneKeyLoginCallBack(this@EnyaAliAuthPlugin)
+                        initSdk(it)
+                        initLayout(it)
+                        setAuthUIConfig()
+                    }
                 }
+
 
                 result.success("")
             }
 
             "startToLogin"->{
-                initLayout(uiConfig)
+                uiConfig?.let {
+                    initLayout(it)
+                }
+
                 oneKeyLoginManager.setAuthUIConfig()
                 oneKeyLoginManager.oneKeyLogin()
             }

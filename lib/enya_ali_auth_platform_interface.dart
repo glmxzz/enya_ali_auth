@@ -37,6 +37,10 @@ abstract class EnyaAliAuthPlatform extends PlatformInterface {
     throw UnimplementedError('quitLoginPage() has not been implemented.');
   }
 
+  void accelerateLoginPage() {
+    throw UnimplementedError('accelerateLoginPage() has not been implemented.');
+  }
+
   void dismissLoading() {
     throw UnimplementedError('dismissLoading() has not been implemented.');
   }

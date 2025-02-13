@@ -50,6 +50,11 @@ class EnyaAliAuthPlugin : FlutterPlugin, MethodCallHandler, ActivityAware,
                 result.success("")
             }
 
+            "accelerateLoginPage" -> {
+                oneKeyLoginManager.accelerateLoginPage()
+                result.success("")
+            }
+
             "startToLogin"->{
                 uiConfig?.let {
                     oneKeyLoginManager.initLayout(it)

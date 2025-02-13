@@ -69,16 +69,19 @@ class OneKeyLoginManager(private val context: Context) {
             PhoneNumberAuthHelper.getInstance(context, initTokenListener()).apply {
                 reporter.setLoggerEnable(true)
                 setAuthSDKInfo(uiConfig.apiKey)
-                accelerateLoginPage(TIMEOUT, object : PreLoginResultListener {
-                    override fun onTokenSuccess(p0: String) {
-                        iOneKeyLoginCallBack?.onTokenResult("{\"code\":\"500000\"}")
-                    }
-
-                    override fun onTokenFailed(p0: String, p1: String) {
-                        iOneKeyLoginCallBack?.onTokenResult("{\"code\":\"500012\"}")
-                    }
-                })
             }
+    }
+
+    fun accelerateLoginPage() {
+            mPhoneNumberAuthHelper?.accelerateLoginPage(TIMEOUT, object : PreLoginResultListener {
+                override fun onTokenSuccess(p0: String) {
+                    iOneKeyLoginCallBack?.onTokenResult("{\"code\":\"500000\"}")
+                }
+
+                override fun onTokenFailed(p0: String, p1: String) {
+                    iOneKeyLoginCallBack?.onTokenResult("{\"code\":\"500012\"}")
+                }
+            })
     }
 
 

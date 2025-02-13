@@ -34,6 +34,11 @@ class MethodChannelEnyaAliAuth extends EnyaAliAuthPlatform {
   }
 
   @override
+  void accelerateLoginPage() {
+    methodChannel.invokeMethod('accelerateLoginPage');
+  }
+
+  @override
   void setupChannelListener(EnyaAliAuthCallback callback) {
     try {
       methodChannel.setMethodCallHandler((call) async {

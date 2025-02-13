@@ -15,6 +15,10 @@ class EnyaAliAuth {
     EnyaAliAuthPlatform.instance.init(uiConfig);
   }
 
+  void accelerateLoginPage() {
+    EnyaAliAuthPlatform.instance.accelerateLoginPage();
+  }
+
   void startToLogin() {
     EnyaAliAuthPlatform.instance.startToLogin();
   }

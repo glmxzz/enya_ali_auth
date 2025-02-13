@@ -57,7 +57,6 @@ class MyCallback implements EnyaAliAuthCallback {
 
   @override
   void onPreTokenSuc() {
-
     print('onPreTokenSuc ------------------');
   }
 }
@@ -163,6 +162,8 @@ class _MyAppState extends State<MyApp> {
       privacyAlertWidth: 270,
       privacyAlertHeight: 40,
     ));
+
+    _enyaAliAuthPlugin.accelerateLoginPage();
   }
 
   @override

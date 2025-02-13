@@ -98,7 +98,9 @@ class OneKeyLoginManager(private val context: Context) {
         uiConfig?.let { config ->
             Log.i("uiConfig == ", config.toMap().toString())
             val temp = getCurrentCarrierNameCn(mPhoneNumberAuthHelper?.currentCarrierName ?: "")
-
+            val loginImgPath = getImageName(config.logoImage)
+            val checkedImgPath = getImageName(config.checkBoxImages[0])
+            val uncheckedImgPath = getImageName(config.checkBoxImages[1])
             
             if (currentCarrierName != temp) {
                 currentCarrierName = temp
@@ -117,7 +119,7 @@ class OneKeyLoginManager(private val context: Context) {
                         .setLogoHidden(config.logoIsHidden)
                         .setLogoWidth(config.logoWidth.toInt())
                         .setLogoHeight(config.logoHeight.toInt())
-                        .setLogoImgPath("ic_launcher")
+                        .setLogoImgPath(loginImgPath)
                         .setLogoOffsetY(config.logoOffsetY.toInt())
 
                         .setSloganText("${currentCarrierName}提供认证服务")
@@ -151,8 +153,8 @@ class OneKeyLoginManager(private val context: Context) {
                             context.resources.getColor(R.color.color_92A6E2)
                         )
 
-                        .setCheckedImgPath("btn_checked")
-                        .setUncheckedImgPath("btn_unchecked")
+                        .setCheckedImgPath(checkedImgPath)
+                        .setUncheckedImgPath(uncheckedImgPath)
                         .setCheckBoxWidth(config.checkBoxWH.toInt())
                         .setCheckBoxHeight(config.checkBoxWH.toInt())
                         .setPrivacyOffsetY_B(config.privacyOffsetY.toInt())

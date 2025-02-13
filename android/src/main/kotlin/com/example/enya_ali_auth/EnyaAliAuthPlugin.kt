@@ -52,7 +52,7 @@ class EnyaAliAuthPlugin : FlutterPlugin, MethodCallHandler, ActivityAware,
 
             "startToLogin"->{
                 uiConfig?.let {
-                    initLayout(it)
+                    oneKeyLoginManager.initLayout(it)
                 }
 
                 oneKeyLoginManager.setAuthUIConfig()

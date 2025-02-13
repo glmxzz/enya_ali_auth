@@ -115,7 +115,7 @@ class OneKeyLoginManager(private val context: Context) {
                         .setLogoHidden(config.logoIsHidden)
                         .setLogoWidth(config.logoWidth.toInt())
                         .setLogoHeight(config.logoHeight.toInt())
-                        .setLogoImgPath("ic_launcher"))
+                        .setLogoImgPath("ic_launcher")
                         .setLogoOffsetY(config.logoOffsetY.toInt())
 
                         .setSloganText("${currentCarrierName}提供认证服务")

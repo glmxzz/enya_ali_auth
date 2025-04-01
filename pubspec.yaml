@@ -1,7 +1,7 @@
 name: enya_ali_auth
 description: '阿里一键登录，支持ios与安卓。'
 version: 1.0.2
-homepage: 'https://github.com/glmxzz/enya_ali_auth.git'
+
 
 environment:
   sdk: '>=3.5.0 <4.0.0'
